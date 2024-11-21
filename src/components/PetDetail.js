@@ -8,7 +8,7 @@ const PetDetail = ({selectedPetId}) => {
   // const pet = petsData[0];
   const petID = selectedPetId
   const {data, isFetching, isSuccess} = useQuery({
-    queryKey:["petData"],
+    queryKey:["pets", selectedPetId],
     queryFn: () => getPetById(petID)
   })
 
