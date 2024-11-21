@@ -23,5 +23,4 @@ async function deletePet(id) {
     return response.data
 }
 
-
 export {getAllPets, getPetById, addPet, deletePet};

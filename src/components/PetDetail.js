@@ -4,12 +4,12 @@ import petsData from "../petsData";
 import { deletePet, getPetById } from "../API/pets";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
-const PetDetail = () => {
+const PetDetail = ({selectedPetId}) => {
   // const pet = petsData[0];
-  
+  const petID = selectedPetId
   const {data, isFetching, isSuccess} = useQuery({
     queryKey:["petData"],
-    queryFn: () => getPetById(25)
+    queryFn: () => getPetById(petID)
   })
 
   const mutation =  useMutation({

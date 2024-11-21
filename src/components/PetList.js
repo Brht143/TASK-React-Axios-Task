@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import { getAllPets, getPetById } from "../API/pets";
 import { useQuery } from "@tanstack/react-query";
 
-const PetList = () => {
+const PetList = ( {setSelectedPetId} ) => {
   const [query, setQuery] = useState("");
   const [showModal, setShowModal] = useState(false);
 
@@ -16,7 +16,7 @@ const PetList = () => {
 
   const petList = data
     ?.filter((pet) => pet.name.toLowerCase().includes(query.toLowerCase()))
-    .map((pet) => <PetItem pet={pet} key={pet.id} />);
+    .map((pet) => <PetItem pet={pet} key={pet.id} setSelectedPetId={setSelectedPetId}/>);
   return (
     <>
       <div className="bg-[#F9E3BE] flex flex-col justify-center items-center ">
