@@ -19,7 +19,7 @@ const Modal = ({ show, setShowModal }) => {
       name: name,
       type: type,
       image: image,
-      adopt:available
+      adopted:available
     })
     if (mutation.isSuccess) setShowModal(false);
   }
